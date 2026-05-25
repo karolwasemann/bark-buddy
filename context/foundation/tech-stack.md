@@ -1,17 +1,22 @@
 ---
-starter_id: 10x-astro-starter
+starter_id: next
 package_manager: npm
 project_name: bark-buddy
 hints:
   language_family: js
   team_size: solo
-  deployment_target: cloudflare-pages
+  deployment_target: vercel
   ci_provider: github-actions
   ci_default_flow: auto-deploy-on-merge
-  bootstrapper_confidence: first-class
-  path_taken: standard
+  bootstrapper_confidence: verified
+  path_taken: custom
   quality_override: false
-  self_check_answers: null
+  self_check_answers:
+    typed: true
+    from_official_starter: true
+    conventions: false
+    docs_current: false
+    can_judge_agent: false
   has_auth: true
   has_payments: false
   has_realtime: false
@@ -21,4 +26,4 @@ hints:
 
 ## Why this stack
 
-Solo developer shipping a dog-walking matchmaker MVP in 2 weeks after-hours with auth and image uploads as the two technology-forcing features. The 10x Astro Starter (Astro 6 + React 19 + TypeScript + Supabase + Cloudflare) is the recommended default for `(web-app, js)` and clears all four agent-friendly gates — typed, convention-based, popular in training data, and well-documented. Supabase covers auth (FR-001/002) and file storage (FR-011 dog photos) out of the box; Cloudflare Pages handles edge deploy with zero ops overhead matching the tight timeline. CI runs on GitHub Actions with auto-deploy-on-merge.
+Solo developer shipping a geo-matching + messaging MVP in 2 after-hours weeks needs auth, file storage (dog photos), PostgreSQL with PostGIS, and a mainstream interactive framework. Next.js + Supabase + Vercel gives full React interactivity on every page (map, inbox, match list), Supabase covers auth + Postgres + storage in one integration, and Vercel provides zero-config deploy with auto-deploy-on-merge. Custom path chosen over the recommended Astro default because BarkBuddy is ~90% interactive UI where Astro's static-first model would require client:load on nearly every component. Self-check surfaced convention and docs gaps — bootstrapper will generate a stronger AGENTS.md to compensate.

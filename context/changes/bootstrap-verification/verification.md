@@ -1,12 +1,12 @@
 ---
-bootstrapped_at: 2026-05-24T12:49:25Z
-starter_id: 10x-astro-starter
-starter_name: "10x Astro Starter (Astro + Supabase + Cloudflare)"
+bootstrapped_at: 2026-05-25T10:40:00+02:00
+starter_id: next
+starter_name: "Next.js"
 project_name: bark-buddy
 language_family: js
 package_manager: npm
-cwd_strategy: git-clone
-bootstrapper_confidence: first-class
+cwd_strategy: subdir-then-move
+bootstrapper_confidence: verified
 phase_3_status: ok
 audit_command: "npm audit --json"
 ---
@@ -14,19 +14,24 @@ audit_command: "npm audit --json"
 ## Hand-off
 
 ```yaml
-starter_id: 10x-astro-starter
+starter_id: next
 package_manager: npm
 project_name: bark-buddy
 hints:
   language_family: js
   team_size: solo
-  deployment_target: cloudflare-pages
+  deployment_target: vercel
   ci_provider: github-actions
   ci_default_flow: auto-deploy-on-merge
-  bootstrapper_confidence: first-class
-  path_taken: standard
+  bootstrapper_confidence: verified
+  path_taken: custom
   quality_override: false
-  self_check_answers: null
+  self_check_answers:
+    typed: true
+    from_official_starter: true
+    conventions: false
+    docs_current: false
+    can_judge_agent: false
   has_auth: true
   has_payments: false
   has_realtime: false
@@ -36,57 +41,57 @@ hints:
 
 ### Why this stack
 
-Solo developer shipping a dog-walking matchmaker MVP in 2 weeks after-hours with auth and image uploads as the two technology-forcing features. The 10x Astro Starter (Astro 6 + React 19 + TypeScript + Supabase + Cloudflare) is the recommended default for `(web-app, js)` and clears all four agent-friendly gates — typed, convention-based, popular in training data, and well-documented. Supabase covers auth (FR-001/002) and file storage (FR-011 dog photos) out of the box; Cloudflare Pages handles edge deploy with zero ops overhead matching the tight timeline. CI runs on GitHub Actions with auto-deploy-on-merge.
+Solo developer shipping a geo-matching + messaging MVP in 2 after-hours weeks needs auth, file storage (dog photos), PostgreSQL with PostGIS, and a mainstream interactive framework. Next.js + Supabase + Vercel gives full React interactivity on every page (map, inbox, match list), Supabase covers auth + Postgres + storage in one integration, and Vercel provides zero-config deploy with auto-deploy-on-merge. Custom path chosen over the recommended Astro default because BarkBuddy is ~90% interactive UI where Astro's static-first model would require client:load on nearly every component. Self-check surfaced convention and docs gaps — bootstrapper will generate a stronger AGENTS.md to compensate.
 
 ## Pre-scaffold verification
 
 | Signal | Value | Severity | Notes |
 | --- | --- | --- | --- |
-| npm package | not run | — | cmd_template uses git clone; no npm CLI package to check |
-| GitHub repo | przeprogramowani/10x-astro-starter last pushed 2026-05-17 | fresh | from card.docs_url |
+| npm package | create-next-app v16.2.6 published 2026-05-23 | fresh | resolved from cmd_template |
+| GitHub repo | not run | — | gh CLI not installed; docs_url (nextjs.org/docs) is not a direct GitHub repo URL |
 
 ## Scaffold log
 
-**Resolved invocation**: `git clone https://github.com/przeprogramowani/10x-astro-starter .bootstrap-scaffold && cd .bootstrap-scaffold && npm install`
-**Strategy**: git-clone
+**Resolved invocation**: `npx create-next-app@latest bootstrap-scaffold --ts --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm`
+**Strategy**: subdir-then-move
 **Exit code**: 0
-**Files moved**: 19
-**Conflicts (.scaffold siblings)**: none
-**.gitignore handling**: moved silently (cwd had none)
-**.bootstrap-scaffold cleanup**: deleted
+**Files moved**: 14 (src/, public/, node_modules/, .next/, .gitignore, package.json, package-lock.json, tsconfig.json, next.config.ts, eslint.config.mjs, postcss.config.mjs, README.md, AGENTS.md, CLAUDE.md, next-env.d.ts)
+**Conflicts (.scaffold siblings)**: none (prior scaffold removed per user request)
+**.gitignore handling**: moved silently (no prior .gitignore in cwd)
+**bootstrap-scaffold cleanup**: deleted
+
+**Note**: `.bootstrap-scaffold` (with leading dot) was rejected by create-next-app due to npm naming restrictions. Used `bootstrap-scaffold` instead.
 
 ## Post-scaffold audit
 
 **Tool**: `npm audit --json`
-**Summary**: 0 CRITICAL, 1 HIGH, 9 MODERATE, 0 LOW
-**Direct vs transitive**: 0/0/2/0 direct of total 0/1/9/0
-
-#### HIGH findings
-
-- **devalue** v5.6.3–5.8.0 — DoS via sparse array deserialization (GHSA-77vg-94rm-hx3p, CVSS 7.5). Transitive. Fix available.
+**Summary**: 0 CRITICAL, 0 HIGH, 2 MODERATE, 0 LOW
+**Direct vs transitive**: 0/0/1/0 direct of total 0/0/2/0
 
 #### MODERATE findings
 
-- **ws** v8.0.0–8.20.0 — Uninitialized memory disclosure (GHSA-58qx-3vcg-4xpx, CVSS 4.4). Transitive via miniflare, @supabase/realtime-js. Fix available.
-- **yaml** v2.0.0–2.8.2 — Stack overflow via deeply nested YAML collections (GHSA-48c2-rrv3-qjmp, CVSS 4.3). Transitive via yaml-language-server → volar-service-yaml → @astrojs/language-server → @astrojs/check. Fix requires semver-major bump of @astrojs/check.
-- **miniflare** — moderate via ws. Transitive. Fix available.
-- **wrangler** — moderate via miniflare. Direct. Fix available.
-- **@cloudflare/vite-plugin** — moderate via miniflare, wrangler, ws. Transitive. Fix available.
-- **@astrojs/check** — moderate via @astrojs/language-server → volar-service-yaml → yaml. Direct. Fix requires semver-major downgrade to 0.9.2.
-- **@astrojs/language-server** — moderate via volar-service-yaml. Transitive. Fix requires @astrojs/check downgrade.
-- **volar-service-yaml** — moderate via yaml-language-server. Transitive. Fix requires @astrojs/check downgrade.
-- **yaml-language-server** — moderate via yaml. Transitive. Fix requires @astrojs/check downgrade.
+1. **postcss** < 8.5.10
+   - Advisory: GHSA-qx2v-qp2m-jg93
+   - Title: PostCSS has XSS via Unescaped `</style>` in its CSS Stringify Output
+   - CVSS: 6.1 (AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N)
+   - Path: node_modules/next/node_modules/postcss (transitive via next)
+   - Fix: postcss >= 8.5.10 (requires next update beyond current range)
+
+2. **next** 9.3.4-canary.0 – 16.3.0-canary.5
+   - Via: postcss (above)
+   - Path: node_modules/next (direct dependency)
+   - Fix: next < 9.3.4-canary.0 (semver-major downgrade — not practical; wait for next patch)
 
 ## Hints recorded but not acted on
 
 | Hint | Value |
 | --- | --- |
-| bootstrapper_confidence | first-class |
+| bootstrapper_confidence | verified |
 | quality_override | false |
-| path_taken | standard |
-| self_check_answers | null |
+| path_taken | custom |
+| self_check_answers | typed: true, from_official_starter: true, conventions: false, docs_current: false, can_judge_agent: false |
 | team_size | solo |
-| deployment_target | cloudflare-pages |
+| deployment_target | vercel |
 | ci_provider | github-actions |
 | ci_default_flow | auto-deploy-on-merge |
 | has_auth | true |
