@@ -8,28 +8,15 @@ Next.js 16 application (React 19, TypeScript 5, Tailwind CSS 4) using the App Ro
 - Do not introduce a Pages Router (`pages/` directory). This project uses App Router exclusively.
 - Do not add CSS Modules or styled-components. Use Tailwind utility classes for all styling.
 
-## Build & Development Commands
+## Build & Development
 
-- `npm run dev` — start the development server (hot reload on http://localhost:3000)
-- `npm run build` — production build; must pass before any PR is considered complete
-- `npm run lint` — run ESLint with next/core-web-vitals and next/typescript rulesets
-
-No test framework is configured yet. Skip test commands until one is added.
-
-## Project Structure
-
-- `src/app/` — App Router pages and layouts (file-based routing: `page.tsx`, `layout.tsx`)
-- `src/app/globals.css` — global Tailwind imports
-- `public/` — static assets served at `/`
-
-Import paths use the `@/*` alias mapped to `./src/*` (see @tsconfig.json `paths`).
+See @package.json `scripts` and @README.md. `npm run build` must pass before any PR is considered complete. No test framework yet — skip test commands until one is added.
 
 ## Coding Style & Naming
 
-- TypeScript strict mode — no implicit `any`, no unchecked index access; enforced by `strict: true` in @tsconfig.json.
 - React components: named exports in PascalCase `.tsx` files.
-- Lint rules enforced: accessibility (jsx-a11y via core-web-vitals), React hooks rules, import resolution, and TypeScript type-checking. Run `npm run lint` to verify.
 - Style with Tailwind 4 utility classes directly in JSX `className`. No `@apply` unless extracting a repeated multi-class pattern.
+- Lint & type rules: see @tsconfig.json (`strict: true`) and @eslint.config.mjs. Run `npm run lint` to verify.
 
 ## Commit & PR Guidelines
 
