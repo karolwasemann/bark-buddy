@@ -9,6 +9,6 @@ vi.mock("next/image", () => ({
 test("Home page renders heading", () => {
   render(<Home />);
   expect(
-    screen.getByRole("heading", { level: 1 })
+    screen.getByRole("heading", { level: 1, name: "BarkBuddy" })
   ).toBeDefined();
 });
