@@ -296,22 +296,22 @@ Create the `(protected)` route group with a dashboard page showing the authentic
 
 #### Automated
 
-- [x] 1.1 `npm run build` passes
-- [x] 1.2 `npm run lint` passes
-- [x] 1.3 shadcn components exist at `src/components/ui/`
+- [x] 1.1 `npm run build` passes — 40291d1
+- [x] 1.2 `npm run lint` passes — 40291d1
+- [x] 1.3 shadcn components exist at `src/components/ui/` — 40291d1
 
 #### Manual
 
-- [x] 1.4 Visiting `/dashboard` redirects to `/login`
-- [x] 1.5 Proxy recognized by Next.js 16 without deprecation warnings
+- [x] 1.4 Visiting `/dashboard` redirects to `/login` — 40291d1
+- [x] 1.5 Proxy recognized by Next.js 16 without deprecation warnings — 40291d1
 
 ### Phase 2: Auth UI — Login, Register, Reset Placeholder
 
 #### Automated
 
-- [ ] 2.1 `npm run build` passes
-- [ ] 2.2 `npm run lint` passes
-- [ ] 2.3 Pages render without runtime errors: `/login`, `/register`, `/reset-password`
+- [x] 2.1 `npm run build` passes
+- [x] 2.2 `npm run lint` passes
+- [x] 2.3 Pages render without runtime errors: `/login`, `/register`, `/reset-password`
 
 #### Manual
 
