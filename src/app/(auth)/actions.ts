@@ -10,8 +10,8 @@ export async function login(
   _prevState: LoginState,
   formData: FormData
 ): Promise<LoginState> {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
+  const email = formData.get("email")?.toString() ?? "";
+  const password = formData.get("password")?.toString() ?? "";
 
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -25,9 +25,9 @@ export async function register(
   _prevState: RegisterState,
   formData: FormData
 ): Promise<RegisterState> {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-  const confirm = formData.get("confirm") as string;
+  const email = formData.get("email")?.toString() ?? "";
+  const password = formData.get("password")?.toString() ?? "";
+  const confirm = formData.get("confirm")?.toString() ?? "";
 
   if (password !== confirm) return { error: "Passwords do not match.", email };
   if (password.length < 6) return { error: "Password must be at least 6 characters.", email };
