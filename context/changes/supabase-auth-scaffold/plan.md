@@ -328,14 +328,14 @@ Create the `(protected)` route group with a dashboard page showing the authentic
 
 #### Automated
 
-- [x] 3.1 `npm run build` passes
-- [x] 3.2 `npm run lint` passes
-- [x] 3.3 All routes compile: `/dashboard`, `/login`, `/register`
+- [x] 3.1 `npm run build` passes — 1792510
+- [x] 3.2 `npm run lint` passes — 1792510
+- [x] 3.3 All routes compile: `/dashboard`, `/login`, `/register` — 1792510
 
 #### Manual
 
-- [x] 3.4 Authenticated user sees dashboard with their email displayed
-- [x] 3.5 Logout clears session and redirects to `/login`
-- [x] 3.6 After logout, visiting `/dashboard` → redirect to `/login`
-- [x] 3.7 Landing page (`/`) has visible links to login and register
-- [x] 3.8 Full end-to-end flow works: register → login → dashboard → logout → blocked
+- [x] 3.4 Authenticated user sees dashboard with their email displayed — 1792510
+- [x] 3.5 Logout clears session and redirects to `/login` — 1792510
+- [x] 3.6 After logout, visiting `/dashboard` → redirect to `/login` — 1792510
+- [x] 3.7 Landing page (`/`) has visible links to login and register — 1792510
+- [x] 3.8 Full end-to-end flow works: register → login → dashboard → logout → blocked — 1792510
