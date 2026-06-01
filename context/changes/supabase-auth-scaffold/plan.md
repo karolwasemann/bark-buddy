@@ -309,33 +309,33 @@ Create the `(protected)` route group with a dashboard page showing the authentic
 
 #### Automated
 
-- [x] 2.1 `npm run build` passes
-- [x] 2.2 `npm run lint` passes
-- [x] 2.3 Pages render without runtime errors: `/login`, `/register`, `/reset-password`
+- [x] 2.1 `npm run build` passes — 6cb36ea
+- [x] 2.2 `npm run lint` passes — 6cb36ea
+- [x] 2.3 Pages render without runtime errors: `/login`, `/register`, `/reset-password` — 6cb36ea
 
 #### Manual
 
-- [ ] 2.4 Register with valid email+password → redirect to `/login` with success message
-- [ ] 2.5 Register with mismatched passwords → inline error shown
-- [ ] 2.6 Register with existing email → inline error shown
-- [ ] 2.7 Login with valid credentials → redirect to `/dashboard`
-- [ ] 2.8 Login with wrong password → inline error shown
-- [ ] 2.9 Login page shows links to register and reset-password
-- [ ] 2.10 Reset-password page shows "Coming soon" and link back to login
-- [ ] 2.11 Already-authenticated user visiting `/login` → redirect to `/dashboard`
+- [x] 2.4 Register with valid email+password → redirect to `/login` with success message — 6cb36ea
+- [x] 2.5 Register with mismatched passwords → inline error shown — 6cb36ea
+- [x] 2.6 Register with existing email → inline error shown — 6cb36ea
+- [x] 2.7 Login with valid credentials → redirect to `/dashboard` — 6cb36ea
+- [x] 2.8 Login with wrong password → inline error shown — 6cb36ea
+- [x] 2.9 Login page shows links to register and reset-password — 6cb36ea
+- [x] 2.10 Reset-password page shows "Coming soon" and link back to login — 6cb36ea
+- [x] 2.11 Already-authenticated user visiting `/login` → redirect to `/dashboard` — 6cb36ea
 
 ### Phase 3: Protected Area — Dashboard and Logout
 
 #### Automated
 
-- [ ] 3.1 `npm run build` passes
-- [ ] 3.2 `npm run lint` passes
-- [ ] 3.3 All routes compile: `/dashboard`, `/login`, `/register`
+- [x] 3.1 `npm run build` passes
+- [x] 3.2 `npm run lint` passes
+- [x] 3.3 All routes compile: `/dashboard`, `/login`, `/register`
 
 #### Manual
 
-- [ ] 3.4 Authenticated user sees dashboard with their email displayed
-- [ ] 3.5 Logout clears session and redirects to `/login`
-- [ ] 3.6 After logout, visiting `/dashboard` → redirect to `/login`
-- [ ] 3.7 Landing page (`/`) has visible links to login and register
-- [ ] 3.8 Full end-to-end flow works: register → login → dashboard → logout → blocked
+- [x] 3.4 Authenticated user sees dashboard with their email displayed
+- [x] 3.5 Logout clears session and redirects to `/login`
+- [x] 3.6 After logout, visiting `/dashboard` → redirect to `/login`
+- [x] 3.7 Landing page (`/`) has visible links to login and register
+- [x] 3.8 Full end-to-end flow works: register → login → dashboard → logout → blocked
