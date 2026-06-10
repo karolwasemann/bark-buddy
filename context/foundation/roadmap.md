@@ -32,7 +32,7 @@ Miejscy właściciele psów w blokach nie mają lekkiego sposobu, by umówić si
 | F-01 | supabase-auth-scaffold | (foundation) auth flows landed; register, login, logout, route protection via middleware | — | FR-001, FR-002, Access Control | done |
 | F-02 | data-schema-and-geo | (foundation) Supabase Postgres schema with users, dogs, pins, geo-overlap matching function | — | FR-005, FR-006, Business Logic, NFR privacy lokalizacji | ready |
 | S-01 | user-and-dog-profile | user can create their profile (display name + bio) and their dog's profile (name, breed, photo) | F-01 | FR-003, FR-004, FR-011, US-01 | done |
-| S-02 | walking-area-pin | user can place a pin on a map and set a radius to mark their walking area | S-01 | FR-005, US-01 | proposed |
+| S-02 | walking-area-pin | user can place a pin on a map and set a radius to mark their walking area | S-01 | FR-005, US-01 | done |
 | S-03 | match-list | user can view a list of matched users (overlap ≥10% smaller circle) sorted by distance, and open match details | F-02, S-02 | FR-006, FR-007, US-01, NFR privacy lokalizacji, NFR time-to-first-match | proposed |
 | S-04 | walk-invitation-and-messaging | user can send a walk-invitation, recipient accepts/declines, then both exchange free-text messages | S-03 | FR-008, FR-009, FR-013, FR-014, US-01 | proposed |
 | S-05 | edit-profile-names | user can edit their display name and their dog's name after creation | S-01 | FR-010 | proposed |
@@ -111,7 +111,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Requires a map component (e.g., Leaflet or Mapbox GL). Choice of map library is a `/10x-plan` decision, not a roadmap one. Sequenced after profile because the pin is stored against the user record.
-- **Status:** proposed
+- **Status:** done
 
 ### S-03: Match list (north star)
 
@@ -179,5 +179,6 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ## Done
 
+- **S-02: user can place a pin on an interactive map and set a radius (circle) to mark their walking area.** — Archived 2026-06-10 → `context/archive/2026-06-10-walking-area-pin/`. Lesson: —.
 - **S-01: user can create their profile (display name + short bio) and their dog's profile (name, breed, photo uploaded to Supabase Storage).** — Archived 2026-06-10 → `context/archive/2026-06-10-user-and-dog-profile/`. Lesson: —.
 - **F-01: (foundation) auth flows landed; register, login, logout, route protection via middleware.** — Archived 2026-06-10 → `context/archive/2026-05-27-supabase-auth-scaffold/`. Lesson: —.
