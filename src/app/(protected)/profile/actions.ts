@@ -81,5 +81,5 @@ export async function createProfile(
   }
 
   // redirect() throws internally — must be called outside try/catch.
-  redirect("/profile");
+  redirect("/walking-area");
 }

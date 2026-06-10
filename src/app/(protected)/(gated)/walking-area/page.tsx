@@ -30,6 +30,7 @@ export default async function WalkingAreaPage() {
       initialLng={initialData?.lng ?? 13.405}
       initialRadius={initialData?.radius_m ?? 1000}
       fetchError={fetchError}
+      isFirstVisit={!initialData}
     />
   );
 }

@@ -66,7 +66,7 @@ export default function NewProfilePage() {
   const busy = pending || uploading;
 
   return (
-    <Card className="max-w-lg">
+    <Card className="max-w-lg mx-auto">
       <CardHeader>
         <CardTitle>Create your profile</CardTitle>
       </CardHeader>

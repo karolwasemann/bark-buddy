@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default async function ProfilePage() {
@@ -25,7 +26,7 @@ export default async function ProfilePage() {
   }
 
   return (
-    <div className="flex flex-col gap-6 max-w-md">
+    <div className="flex flex-col gap-6 max-w-md mx-auto">
       <Card>
         <CardHeader>
           <CardTitle>{profile?.display_name}</CardTitle>
@@ -58,9 +59,9 @@ export default async function ProfilePage() {
         </CardContent>
       </Card>
 
-      <Link href="/dashboard" className="text-sm underline">
-        Go to dashboard
-      </Link>
+      <Button variant="outline" asChild>
+        <Link href="/profile/edit">Edit profile</Link>
+      </Button>
     </div>
   );
 }

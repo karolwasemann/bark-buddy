@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { logout } from "./actions";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navigation } from "@/components/Navigation";
 
 export default async function ProtectedLayout({
   children,
@@ -18,9 +20,12 @@ export default async function ProtectedLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <header className="flex items-center justify-between px-6 py-4 border-b">
-        <span className="font-bold">🐾 BarkBuddy</span>
-        <div className="flex items-center gap-2">
+      <header className="flex items-center justify-between px-4 py-3 border-b gap-2">
+        <Link href="/dashboard" className="font-bold text-lg shrink-0">
+          🐾 BarkBuddy
+        </Link>
+        <Navigation />
+        <div className="flex items-center gap-2 shrink-0">
           <ThemeToggle />
           <form action={logout}>
             <Button variant="outline" size="sm" type="submit">

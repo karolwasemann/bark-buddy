@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import { toast } from "sonner";
 import { saveWalkingPin } from "./actions";
 
 const MapView = dynamic(
@@ -19,6 +20,7 @@ interface Props {
   initialLng: number;
   initialRadius: number;
   fetchError?: boolean;
+  isFirstVisit?: boolean;
 }
 
 export function WalkingAreaClient({
@@ -26,11 +28,13 @@ export function WalkingAreaClient({
   initialLng,
   initialRadius,
   fetchError,
+  isFirstVisit = false,
 }: Props) {
   const [lat, setLat] = useState(initialLat);
   const [lng, setLng] = useState(initialLng);
   const [radius, setRadius] = useState(initialRadius);
   const [status, setStatus] = useState<Status>("idle");
+  const [hasMoved, setHasMoved] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const debouncedSave = useCallback(
@@ -40,9 +44,16 @@ export function WalkingAreaClient({
         setStatus("saving");
         try {
           const result = await saveWalkingPin(newLat, newLng, newRadius);
-          setStatus(result.error ? "error" : "saved");
+          if (result.error) {
+            setStatus("error");
+            toast.error("Failed to save walking area");
+          } else {
+            setStatus("saved");
+            toast.success("Walking area saved");
+          }
         } catch {
           setStatus("error");
+          toast.error("Failed to save walking area");
         }
       }, 1500);
     },
@@ -69,6 +80,7 @@ export function WalkingAreaClient({
   function handleMapChange(newLat: number, newLng: number, newRadius: number) {
     setLat(newLat);
     setLng(newLng);
+    if (!hasMoved) setHasMoved(true);
     debouncedSave(newLat, newLng, newRadius);
   }
 
@@ -77,8 +89,16 @@ export function WalkingAreaClient({
     debouncedSave(lat, lng, newRadius);
   }
 
+  const showGuide = isFirstVisit && !hasMoved;
+
   return (
-    <div className="flex flex-col gap-4">
+    <div className="max-w-5xl mx-auto flex flex-col gap-4">
+      {showGuide && (
+        <p className="text-sm text-muted-foreground bg-muted rounded-lg px-4 py-3">
+          📍 Drop your pin where you walk your dog — this helps us find nearby dog walkers for you.
+        </p>
+      )}
+
       <div className="h-[60vh] w-full rounded-lg overflow-hidden border">
         <MapView
           initialLat={lat}
@@ -109,8 +129,6 @@ export function WalkingAreaClient({
 
       <p className="text-xs text-muted-foreground h-4">
         {status === "saving" && "Saving…"}
-        {status === "saved" && "Saved"}
-        {status === "error" && "Failed to save"}
       </p>
     </div>
   );
