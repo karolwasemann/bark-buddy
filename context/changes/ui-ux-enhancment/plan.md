@@ -341,66 +341,66 @@ Add first-time guidance to the walking area, wire toast notifications for save f
 
 #### Automated
 
-- [x] 1.1 Build passes after theme + provider changes
-- [x] 1.2 Lint passes
-- [x] 1.3 No TypeScript errors
+- [x] 1.1 Build passes after theme + provider changes — f59397a
+- [x] 1.2 Lint passes — f59397a
+- [x] 1.3 No TypeScript errors — f59397a
 
 #### Manual
 
-- [ ] 1.4 Ocean Breeze colors render correctly (light mode)
-- [ ] 1.5 Dark mode toggle works and persists
-- [ ] 1.6 Toast component mounts (verifiable in Phase 5)
+- [x] 1.4 Ocean Breeze colors render correctly (light mode) — f59397a
+- [x] 1.5 Dark mode toggle works and persists — f59397a
+- [x] 1.6 Toast component mounts (verifiable in Phase 5) — f59397a
 
 ### Phase 2: Landing Page Redesign
 
 #### Automated
 
-- [ ] 2.1 Build passes
-- [ ] 2.2 No hardcoded color values in page.tsx
+- [x] 2.1 Build passes — 25138b1
+- [x] 2.2 No hardcoded color values in page.tsx — 25138b1
 
 #### Manual
 
-- [ ] 2.3 Landing shows app-specific content
-- [ ] 2.4 CTAs navigate to login/register
-- [ ] 2.5 Responsive on 375px mobile
+- [x] 2.3 Landing shows app-specific content — 25138b1
+- [x] 2.4 CTAs navigate to login/register — 25138b1
+- [x] 2.5 Responsive on 375px mobile — 25138b1
 
 ### Phase 3: Navigation Component
 
 #### Automated
 
-- [ ] 3.1 Build passes
-- [ ] 3.2 Lint passes
+- [x] 3.1 Build passes — 25138b1
+- [x] 3.2 Lint passes — 25138b1
 
 #### Manual
 
-- [ ] 3.3 Active route visually distinguished
-- [ ] 3.4 Mobile: icons only
-- [ ] 3.5 Desktop: icons + labels
-- [ ] 3.6 Theme toggle and sign-out in nav
+- [x] 3.3 Active route visually distinguished — 25138b1
+- [x] 3.4 Mobile: icons only — 25138b1
+- [x] 3.5 Desktop: icons + labels — 25138b1
+- [x] 3.6 Theme toggle and sign-out in nav — 25138b1
 
 ### Phase 4: Dashboard Enrichment
 
 #### Automated
 
-- [ ] 4.1 Build passes
-- [ ] 4.2 TypeScript compiles
+- [x] 4.1 Build passes — 25138b1
+- [x] 4.2 TypeScript compiles — 25138b1
 
 #### Manual
 
-- [ ] 4.3 3 cards with real data displayed
-- [ ] 4.4 Walking area card shows status/CTA
-- [ ] 4.5 Responsive grid layout
+- [x] 4.3 3 cards with real data displayed — 25138b1
+- [x] 4.4 Walking area card shows status/CTA — 25138b1
+- [x] 4.5 Responsive grid layout — 25138b1
 
 ### Phase 5: Walking Area & Profile Polish
 
 #### Automated
 
-- [ ] 5.1 Build passes
-- [ ] 5.2 Lint passes
+- [x] 5.1 Build passes — 25138b1
+- [x] 5.2 Lint passes — 25138b1
 
 #### Manual
 
-- [ ] 5.3 Pulsing pin + instruction text on first visit
-- [ ] 5.4 Toast on save success/error
-- [ ] 5.5 Edit profile link on profile page
-- [ ] 5.6 Profile creation redirects to walking area
+- [x] 5.3 Pulsing pin + instruction text on first visit — 25138b1
+- [x] 5.4 Toast on save success/error — 25138b1
+- [x] 5.5 Edit profile link on profile page — 25138b1
+- [x] 5.6 Profile creation redirects to walking area — 25138b1
