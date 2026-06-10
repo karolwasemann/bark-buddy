@@ -265,30 +265,30 @@ No new code. This phase is verification-only.
 
 #### Automated
 
-- [x] 1.1 Migration applies cleanly: `supabase db reset`
-- [x] 1.2 `npm install` completes without conflicts
-- [x] 1.3 `npm run build` passes
-- [x] 1.4 `npm run lint` passes
+- [x] 1.1 Migration applies cleanly: `supabase db reset` — 55b5423
+- [x] 1.2 `npm install` completes without conflicts — 55b5423
+- [x] 1.3 `npm run build` passes — 55b5423
+- [x] 1.4 `npm run lint` passes — 55b5423
 
 #### Manual
 
-- [x] 1.5 `walking_pins` table visible in Supabase Studio with correct columns and RLS
-- [x] 1.6 Marker icon files accessible at `/leaflet/marker-icon.png`
+- [x] 1.5 `walking_pins` table visible in Supabase Studio with correct columns and RLS — 55b5423
+- [x] 1.6 Marker icon files accessible at `/leaflet/marker-icon.png` — 55b5423
 
 ### Phase 2: MapView Component & Walking Area Page
 
 #### Automated
 
-- [ ] 2.1 `npm run build` passes
-- [ ] 2.2 `npm run lint` passes
-- [ ] 2.3 `npm run test` passes
+- [x] 2.1 `npm run build` passes
+- [x] 2.2 `npm run lint` passes
+- [x] 2.3 `npm run test` passes
 
 #### Manual
 
-- [ ] 2.4 Map renders at `/walking-area` with Berlin center and pin
-- [ ] 2.5 Pin is draggable; circle moves with pin
-- [ ] 2.6 Slider changes circle radius in real-time
-- [ ] 2.7 No console errors about Leaflet/window/SSR
+- [x] 2.4 Map renders at `/walking-area` with Berlin center and pin
+- [x] 2.5 Pin is draggable; circle moves with pin
+- [x] 2.6 Slider changes circle radius in real-time
+- [x] 2.7 No console errors about Leaflet/window/SSR
 
 ### Phase 3: Dashboard Link
 
