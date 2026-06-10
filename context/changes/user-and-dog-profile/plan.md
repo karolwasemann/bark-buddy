@@ -270,33 +270,33 @@ Gate the protected area so users without a complete profile are redirected to `/
 
 #### Automated
 
-- [x] 1.1 `npm run build` passes
-- [x] 1.2 `npm run lint` passes
-- [x] 1.3 Migration files exist under `supabase/migrations/` and parse as valid SQL
+- [x] 1.1 `npm run build` passes — 844a421
+- [x] 1.2 `npm run lint` passes — 844a421
+- [x] 1.3 Migration files exist under `supabase/migrations/` and parse as valid SQL — 844a421
 
 #### Manual
 
-- [x] 1.4 Migrations apply cleanly (`supabase db push` succeeds)
-- [x] 1.5 `profiles` and `dogs` tables exist with RLS enabled
-- [x] 1.6 `dog-photos` bucket exists and is private
-- [x] 1.7 Cross-user API read of profile/dog/photo is denied by RLS
+- [x] 1.4 Migrations apply cleanly (`supabase db push` succeeds) — 844a421
+- [x] 1.5 `profiles` and `dogs` tables exist with RLS enabled — 844a421
+- [x] 1.6 `dog-photos` bucket exists and is private — 844a421
+- [x] 1.7 Cross-user API read of profile/dog/photo is denied by RLS — 844a421
 
 ### Phase 2: Profile Creation Flow
 
 #### Automated
 
-- [ ] 2.1 `npm run build` passes
-- [ ] 2.2 `npm run lint` passes
-- [ ] 2.3 `/profile/new` route compiles and renders without runtime error
+- [x] 2.1 `npm run build` passes
+- [x] 2.2 `npm run lint` passes
+- [x] 2.3 `/profile/new` route compiles and renders without runtime error
 
 #### Manual
 
-- [ ] 2.4 Valid owner + dog (no photo) creates both rows and redirects to `/profile`
-- [ ] 2.5 Valid photo uploads and `photo_path` is stored
-- [ ] 2.6 Oversized / wrong-type file is rejected inline
-- [ ] 2.7 Empty display name / dog name / breed shows inline error, no row written
-- [ ] 2.8 Bio over 300 chars is rejected
-- [ ] 2.9 Simulated dog-insert failure after upload leaves no orphaned object
+- [x] 2.4 Valid owner + dog (no photo) creates both rows and redirects to `/profile`
+- [x] 2.5 Valid photo uploads and `photo_path` is stored
+- [x] 2.6 Oversized / wrong-type file is rejected inline
+- [x] 2.7 Empty display name / dog name / breed shows inline error, no row written
+- [x] 2.8 Bio over 300 chars is rejected
+- [x] 2.9 Simulated dog-insert failure after upload leaves no orphaned object
 
 ### Phase 3: Onboarding Gate & Profile View
 
