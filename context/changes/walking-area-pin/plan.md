@@ -308,13 +308,13 @@ No new code. This phase is verification-only.
 
 #### Automated
 
-- [x] 4.1 `npm run build` passes cleanly
-- [x] 4.2 `npm run lint` passes with zero warnings
-- [x] 4.3 `npm run test` passes
+- [x] 4.1 `npm run build` passes cleanly — a3cf2cb
+- [x] 4.2 `npm run lint` passes with zero warnings — a3cf2cb
+- [x] 4.3 `npm run test` passes — a3cf2cb
 
 #### Manual
 
-- [x] 4.4 Full flow: Login → Dashboard → Set walking area → drag → slider → saves → refresh → persists
-- [x] 4.5 New user flow: Berlin center, default pin, first save works
-- [x] 4.6 RLS: data not accessible as different user
-- [x] 4.7 No regressions on dashboard/profile pages
+- [x] 4.4 Full flow: Login → Dashboard → Set walking area → drag → slider → saves → refresh → persists — a3cf2cb
+- [x] 4.5 New user flow: Berlin center, default pin, first save works — a3cf2cb
+- [x] 4.6 RLS: data not accessible as different user — a3cf2cb
+- [x] 4.7 No regressions on dashboard/profile pages — a3cf2cb
