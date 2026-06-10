@@ -284,11 +284,11 @@ End-to-end verification that the function works correctly from the app's Supabas
 
 #### Automated
 
-- [x] 3.1 All migrations apply cleanly on fresh reset
-- [x] 3.2 TypeScript types generate without errors
+- [x] 3.1 All migrations apply cleanly on fresh reset — 2bc0f55
+- [x] 3.2 TypeScript types generate without errors — 2bc0f55
 
 #### Manual
 
-- [x] 3.3 RPC call works with authenticated user JWT
-- [x] 3.4 Correct match data returned end-to-end
-- [x] 3.5 No location data leaks in response
+- [x] 3.3 RPC call works with authenticated user JWT — 2bc0f55
+- [x] 3.4 Correct match data returned end-to-end — 2bc0f55
+- [x] 3.5 No location data leaks in response — 2bc0f55
