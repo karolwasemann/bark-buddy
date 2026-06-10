@@ -285,31 +285,31 @@ Gate the protected area so users without a complete profile are redirected to `/
 
 #### Automated
 
-- [x] 2.1 `npm run build` passes
-- [x] 2.2 `npm run lint` passes
-- [x] 2.3 `/profile/new` route compiles and renders without runtime error
+- [x] 2.1 `npm run build` passes — 9723965
+- [x] 2.2 `npm run lint` passes — 9723965
+- [x] 2.3 `/profile/new` route compiles and renders without runtime error — 9723965
 
 #### Manual
 
-- [x] 2.4 Valid owner + dog (no photo) creates both rows and redirects to `/profile`
-- [x] 2.5 Valid photo uploads and `photo_path` is stored
-- [x] 2.6 Oversized / wrong-type file is rejected inline
-- [x] 2.7 Empty display name / dog name / breed shows inline error, no row written
-- [x] 2.8 Bio over 300 chars is rejected
-- [x] 2.9 Simulated dog-insert failure after upload leaves no orphaned object
+- [x] 2.4 Valid owner + dog (no photo) creates both rows and redirects to `/profile` — 9723965
+- [x] 2.5 Valid photo uploads and `photo_path` is stored — 9723965
+- [x] 2.6 Oversized / wrong-type file is rejected inline — 9723965
+- [x] 2.7 Empty display name / dog name / breed shows inline error, no row written — 9723965
+- [x] 2.8 Bio over 300 chars is rejected — 9723965
+- [x] 2.9 Simulated dog-insert failure after upload leaves no orphaned object — 9723965
 
 ### Phase 3: Onboarding Gate & Profile View
 
 #### Automated
 
-- [ ] 3.1 `npm run build` passes
-- [ ] 3.2 `npm run lint` passes
-- [ ] 3.3 `/profile` and `/profile/new` routes compile
+- [x] 3.1 `npm run build` passes
+- [x] 3.2 `npm run lint` passes
+- [x] 3.3 `/profile` and `/profile/new` routes compile
 
 #### Manual
 
-- [ ] 3.4 User with no profile is redirected to `/profile/new` (no loop)
-- [ ] 3.5 After creation, no redirect; `/dashboard` and `/profile` reachable
-- [ ] 3.6 Profile view shows display name, bio, dog name, breed
-- [ ] 3.7 Dog photo renders via signed URL; placeholder when absent
-- [ ] 3.8 Second user cannot view the first user's photo (no public URL)
+- [x] 3.4 User with no profile is redirected to `/profile/new` (no loop)
+- [x] 3.5 After creation, no redirect; `/dashboard` and `/profile` reachable
+- [x] 3.6 Profile view shows display name, bio, dog name, breed
+- [x] 3.7 Dog photo renders via signed URL; placeholder when absent
+- [x] 3.8 Second user cannot view the first user's photo (no public URL)

@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -12,10 +13,13 @@ export default async function DashboardPage() {
       <CardHeader>
         <CardTitle>Dashboard</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex flex-col gap-3">
         <p className="text-sm text-muted-foreground">
           Signed in as <span className="font-medium text-foreground">{user?.email}</span>
         </p>
+        <Link href="/profile" className="text-sm underline">
+          View your profile
+        </Link>
       </CardContent>
     </Card>
   );
