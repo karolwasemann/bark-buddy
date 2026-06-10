@@ -294,27 +294,27 @@ No new code. This phase is verification-only.
 
 #### Automated
 
-- [x] 3.1 `npm run build` passes
-- [x] 3.2 `npm run lint` passes
+- [x] 3.1 `npm run build` passes — d40b064
+- [x] 3.2 `npm run lint` passes — d40b064
 
 #### Manual
 
-- [x] 3.3 Dashboard "Set walking area" link navigates to `/walking-area`
-- [x] 3.4 Drag pin + wait → "Saved" status appears
-- [x] 3.5 Refresh → pin and radius restored from DB
-- [x] 3.6 Network error → "Failed — will retry" message, next interaction retries
+- [x] 3.3 Dashboard "Set walking area" link navigates to `/walking-area` — d40b064
+- [x] 3.4 Drag pin + wait → "Saved" status appears — d40b064
+- [x] 3.5 Refresh → pin and radius restored from DB — d40b064
+- [x] 3.6 Network error → "Failed — will retry" message, next interaction retries — d40b064
 
 ### Phase 4: Final Verification
 
 #### Automated
 
-- [ ] 4.1 `npm run build` passes cleanly
-- [ ] 4.2 `npm run lint` passes with zero warnings
-- [ ] 4.3 `npm run test` passes
+- [x] 4.1 `npm run build` passes cleanly
+- [x] 4.2 `npm run lint` passes with zero warnings
+- [x] 4.3 `npm run test` passes
 
 #### Manual
 
-- [ ] 4.4 Full flow: Login → Dashboard → Set walking area → drag → slider → saves → refresh → persists
-- [ ] 4.5 New user flow: Berlin center, default pin, first save works
-- [ ] 4.6 RLS: data not accessible as different user
-- [ ] 4.7 No regressions on dashboard/profile pages
+- [x] 4.4 Full flow: Login → Dashboard → Set walking area → drag → slider → saves → refresh → persists
+- [x] 4.5 New user flow: Berlin center, default pin, first save works
+- [x] 4.6 RLS: data not accessible as different user
+- [x] 4.7 No regressions on dashboard/profile pages
