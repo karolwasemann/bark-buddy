@@ -1,10 +1,10 @@
 ---
 change_id: user-and-dog-profile
 title: User and dog profile
-status: implemented
+status: archived
 created: 2026-06-10
-updated: 2026-06-10T10:01:00Z
-archived_at: null
+updated: 2026-06-10
+archived_at: 2026-06-10T08:05:46Z
 ---
 
 ## Notes
