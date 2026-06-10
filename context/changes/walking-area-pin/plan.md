@@ -318,3 +318,9 @@ No new code. This phase is verification-only.
 - [x] 4.5 New user flow: Berlin center, default pin, first save works — a3cf2cb
 - [x] 4.6 RLS: data not accessible as different user — a3cf2cb
 - [x] 4.7 No regressions on dashboard/profile pages — a3cf2cb
+
+## Addendum — Structural Deviation (Accepted)
+
+**Date**: 2026-06-10
+
+Plan specified a `'use client'` page with client-side fetch. Implementation instead uses a Server Component (`page.tsx`) that fetches data server-side and passes props to a Client Component (`WalkingAreaClient.tsx`). This is idiomatic Next.js App Router — eliminates the client-side fetch waterfall and leverages server rendering. Accepted as improvement over the original plan.

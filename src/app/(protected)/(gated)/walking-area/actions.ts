@@ -13,25 +13,30 @@ export async function saveWalkingPin(
   if (radius_m < 200 || radius_m > 5000) return { error: "Radius must be between 200 and 5000." };
 
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return { error: "Not authenticated." };
 
-  // Get the user's dog
-  const { data: dog, error: dogError } = await supabase
-    .from("dogs")
-    .select("id")
-    .eq("owner_id", user.id)
-    .single();
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return { error: "Not authenticated." };
 
-  if (dogError || !dog) return { error: "Dog profile not found." };
+    // Get the user's dog
+    const { data: dog, error: dogError } = await supabase
+      .from("dogs")
+      .select("id")
+      .eq("owner_id", user.id)
+      .single();
 
-  const { error } = await supabase
-    .from("walking_pins")
-    .upsert(
-      { dog_id: dog.id, lat, lng, radius_m, updated_at: new Date().toISOString() },
-      { onConflict: "dog_id" }
-    );
+    if (dogError || !dog) return { error: "Dog profile not found." };
 
-  if (error) return { error: error.message };
-  return {};
+    const { error } = await supabase
+      .from("walking_pins")
+      .upsert(
+        { dog_id: dog.id, lat, lng, radius_m, updated_at: new Date().toISOString() },
+        { onConflict: "dog_id" }
+      );
+
+    if (error) return { error: error.message };
+    return {};
+  } catch {
+    return { error: "Unexpected error. Please try again." };
+  }
 }
