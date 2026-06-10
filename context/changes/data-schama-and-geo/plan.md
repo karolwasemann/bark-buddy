@@ -256,29 +256,29 @@ End-to-end verification that the function works correctly from the app's Supabas
 
 #### Automated
 
-- [x] 1.1 Migration applies cleanly: `supabase db reset`
-- [x] 1.2 Column exists: `SELECT location FROM walking_pins;` returns geography values
-- [x] 1.3 Index exists in pg_indexes
+- [x] 1.1 Migration applies cleanly: `supabase db reset` — 5b4f49c
+- [x] 1.2 Column exists: `SELECT location FROM walking_pins;` returns geography values — 5b4f49c
+- [x] 1.3 Index exists in pg_indexes — 5b4f49c
 
 #### Manual
 
-- [x] 1.4 Insert a pin via app UI, confirm location column populated in Studio
+- [x] 1.4 Insert a pin via app UI, confirm location column populated in Studio — 5b4f49c
 
 ### Phase 2: Geo-Overlap Matching Function
 
 #### Automated
 
-- [ ] 2.1 Migration applies cleanly: `supabase db reset`
-- [ ] 2.2 Function exists in pg_proc
-- [ ] 2.3 Function is security definer
+- [x] 2.1 Migration applies cleanly: `supabase db reset`
+- [x] 2.2 Function exists in pg_proc
+- [x] 2.3 Function is security definer
 
 #### Manual
 
-- [ ] 2.4 Overlapping pins appear as matches
-- [ ] 2.5 Non-overlapping pins do not appear
-- [ ] 2.6 No lat/lng/radius in results
-- [ ] 2.7 Distance buckets correct
-- [ ] 2.8 Requesting user excluded from own results
+- [x] 2.4 Overlapping pins appear as matches
+- [x] 2.5 Non-overlapping pins do not appear
+- [x] 2.6 No lat/lng/radius in results
+- [x] 2.7 Distance buckets correct
+- [x] 2.8 Requesting user excluded from own results
 
 ### Phase 3: Integration Verification
 
