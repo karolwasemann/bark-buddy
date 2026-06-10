@@ -20,6 +20,9 @@ export default async function DashboardPage() {
         <Link href="/profile" className="text-sm underline">
           View your profile
         </Link>
+        <Link href="/walking-area" className="text-sm underline">
+          Set walking area
+        </Link>
       </CardContent>
     </Card>
   );

@@ -279,30 +279,30 @@ No new code. This phase is verification-only.
 
 #### Automated
 
-- [x] 2.1 `npm run build` passes
-- [x] 2.2 `npm run lint` passes
-- [x] 2.3 `npm run test` passes
+- [x] 2.1 `npm run build` passes — 2923c33
+- [x] 2.2 `npm run lint` passes — 2923c33
+- [x] 2.3 `npm run test` passes — 2923c33
 
 #### Manual
 
-- [x] 2.4 Map renders at `/walking-area` with Berlin center and pin
-- [x] 2.5 Pin is draggable; circle moves with pin
-- [x] 2.6 Slider changes circle radius in real-time
-- [x] 2.7 No console errors about Leaflet/window/SSR
+- [x] 2.4 Map renders at `/walking-area` with Berlin center and pin — 2923c33
+- [x] 2.5 Pin is draggable; circle moves with pin — 2923c33
+- [x] 2.6 Slider changes circle radius in real-time — 2923c33
+- [x] 2.7 No console errors about Leaflet/window/SSR — 2923c33
 
 ### Phase 3: Dashboard Link
 
 #### Automated
 
-- [ ] 3.1 `npm run build` passes
-- [ ] 3.2 `npm run lint` passes
+- [x] 3.1 `npm run build` passes
+- [x] 3.2 `npm run lint` passes
 
 #### Manual
 
-- [ ] 3.3 Dashboard "Set walking area" link navigates to `/walking-area`
-- [ ] 3.4 Drag pin + wait → "Saved" status appears
-- [ ] 3.5 Refresh → pin and radius restored from DB
-- [ ] 3.6 Network error → "Failed — will retry" message, next interaction retries
+- [x] 3.3 Dashboard "Set walking area" link navigates to `/walking-area`
+- [x] 3.4 Drag pin + wait → "Saved" status appears
+- [x] 3.5 Refresh → pin and radius restored from DB
+- [x] 3.6 Network error → "Failed — will retry" message, next interaction retries
 
 ### Phase 4: Final Verification
 

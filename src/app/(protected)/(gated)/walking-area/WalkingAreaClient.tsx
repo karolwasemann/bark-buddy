@@ -28,8 +28,12 @@ export function WalkingAreaClient({ initialLat, initialLng, initialRadius }: Pro
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(async () => {
       setStatus("saving");
-      const result = await saveWalkingPin(newLat, newLng, newRadius);
-      setStatus(result.error ? "error" : "saved");
+      try {
+        const result = await saveWalkingPin(newLat, newLng, newRadius);
+        setStatus(result.error ? "error" : "saved");
+      } catch {
+        setStatus("error");
+      }
     }, 1500);
   }, []);
 
