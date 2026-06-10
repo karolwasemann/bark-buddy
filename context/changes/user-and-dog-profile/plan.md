@@ -302,14 +302,14 @@ Gate the protected area so users without a complete profile are redirected to `/
 
 #### Automated
 
-- [x] 3.1 `npm run build` passes
-- [x] 3.2 `npm run lint` passes
-- [x] 3.3 `/profile` and `/profile/new` routes compile
+- [x] 3.1 `npm run build` passes — e46545c
+- [x] 3.2 `npm run lint` passes — e46545c
+- [x] 3.3 `/profile` and `/profile/new` routes compile — e46545c
 
 #### Manual
 
-- [x] 3.4 User with no profile is redirected to `/profile/new` (no loop)
-- [x] 3.5 After creation, no redirect; `/dashboard` and `/profile` reachable
-- [x] 3.6 Profile view shows display name, bio, dog name, breed
-- [x] 3.7 Dog photo renders via signed URL; placeholder when absent
-- [x] 3.8 Second user cannot view the first user's photo (no public URL)
+- [x] 3.4 User with no profile is redirected to `/profile/new` (no loop) — e46545c
+- [x] 3.5 After creation, no redirect; `/dashboard` and `/profile` reachable — e46545c
+- [x] 3.6 Profile view shows display name, bio, dog name, breed — e46545c
+- [x] 3.7 Dog photo renders via signed URL; placeholder when absent — e46545c
+- [x] 3.8 Second user cannot view the first user's photo (no public URL) — e46545c
