@@ -1,8 +1,39 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+# Ocean Breeze Theme – UI Documentation
 
-@custom-variant dark (&:is(.dark *));
+Shadcn/ui theme configuration for BarkBuddy using the **Ocean Breeze (tweakcn)** palette. Calming coastal colors suited for a dog-walking community app.
 
+## Theme Source
+
+- **Name**: Ocean Breeze (tweakcn)
+- **Author**: @mike
+- **URL**: https://shadcnthemer.com/themes/bcf98433-75da-45df-afc0-2535257a6cb0
+- **Tool**: [tweakcn](https://github.com/jnsahaj/tweakcn) – visual no-code theme editor for shadcn/ui
+
+## Design Intent
+
+Ocean Breeze uses refreshing aqua tones reminiscent of tropical/coastal waters. Key characteristics:
+
+- **Primary**: Bright aqua — `oklch(0.72 0.19 149.58)` (light), `oklch(0.77 0.15 163.22)` (dark)
+- **Mood**: Calm, fresh, outdoors — fits a dog-walking/outdoor activity app
+- **Font**: DM Sans, sans-serif (recommended by tweakcn preset)
+
+## Installation
+
+### Option A: CLI (recommended)
+
+```bash
+npx shadcn@latest add https://tweakcn-picker.vercel.app/r/theme-ocean-breeze.json
+```
+
+### Option B: Manual CSS variables
+
+Replace the `:root` and `.dark` blocks in `src/app/globals.css` with the Ocean Breeze palette below.
+
+## CSS Variables (OKLCH)
+
+Paste into `src/app/globals.css`, replacing the current `:root` and dark-mode blocks:
+
+```css
 :root {
   --radius: 0.625rem;
   --background: oklch(0.98 0.01 200);
@@ -71,35 +102,27 @@
   --sidebar-border: oklch(0.30 0.03 220);
   --sidebar-ring: oklch(0.77 0.15 163.22);
 }
+```
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
+## `@theme inline` Block
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-}
+Keep the existing `@theme inline` block in `globals.css` — it maps CSS variables to Tailwind color utilities. No changes needed; all shadcn/ui components pick up the new colors automatically.
+
+## Dark Mode Strategy
+
+Current project uses `@media (prefers-color-scheme: dark)` in `globals.css`. The theme above uses a `.dark` class strategy (shadcn/ui standard). To adopt:
+
+1. Switch from `@media (prefers-color-scheme: dark)` → `.dark` class on `<html>`
+2. Add `@custom-variant dark (&:is(.dark *));` (already present)
+3. Use `next-themes` package for toggle support (optional)
+
+## Font Recommendation
+
+tweakcn Ocean Breeze pairs with **DM Sans**. Current project uses Geist — both are clean sans-serifs that work well with this palette. Keep Geist for consistency with Vercel ecosystem, or swap to DM Sans for the full Ocean Breeze feel.
+
+## Integration Notes
+
+- **No component changes needed** — shadcn/ui components read CSS variables directly
+- **Tailwind 4 compatible** — uses `@theme inline` mapping (already set up)
+- **OKLCH color space** — modern, perceptually uniform; supported in all modern browsers
+- **components.json** is already configured with `cssVariables: true`
