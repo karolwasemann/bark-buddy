@@ -3,7 +3,7 @@ project: "BarkBuddy"
 version: 1
 status: draft
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-06-10
 prd_version: 1
 main_goal: market-feedback
 top_blocker: time
@@ -29,9 +29,9 @@ Miejscy właściciele psów w blokach nie mają lekkiego sposobu, by umówić si
 
 | ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
 |---|---|---|---|---|---|
-| F-01 | supabase-auth-scaffold | (foundation) auth flows landed; register, login, logout, route protection via middleware | — | FR-001, FR-002, Access Control | ready |
+| F-01 | supabase-auth-scaffold | (foundation) auth flows landed; register, login, logout, route protection via middleware | — | FR-001, FR-002, Access Control | done |
 | F-02 | data-schema-and-geo | (foundation) Supabase Postgres schema with users, dogs, pins, geo-overlap matching function | — | FR-005, FR-006, Business Logic, NFR privacy lokalizacji | ready |
-| S-01 | user-and-dog-profile | user can create their profile (display name + bio) and their dog's profile (name, breed, photo) | F-01 | FR-003, FR-004, FR-011, US-01 | proposed |
+| S-01 | user-and-dog-profile | user can create their profile (display name + bio) and their dog's profile (name, breed, photo) | F-01 | FR-003, FR-004, FR-011, US-01 | done |
 | S-02 | walking-area-pin | user can place a pin on a map and set a radius to mark their walking area | S-01 | FR-005, US-01 | proposed |
 | S-03 | match-list | user can view a list of matched users (overlap ≥10% smaller circle) sorted by distance, and open match details | F-02, S-02 | FR-006, FR-007, US-01, NFR privacy lokalizacji, NFR time-to-first-match | proposed |
 | S-04 | walk-invitation-and-messaging | user can send a walk-invitation, recipient accepts/declines, then both exchange free-text messages | S-03 | FR-008, FR-009, FR-013, FR-014, US-01 | proposed |
@@ -72,7 +72,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Supabase Auth email+password is well-documented; low technical risk. Sequenced first because every slice depends on a logged-in user.
-- **Status:** ready
+- **Status:** done
 
 ### F-02: Data schema and geo-matching function
 
@@ -99,7 +99,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Dog photo upload (FR-011) adds Supabase Storage integration; slightly more surface than a pure form, but well-documented. Sequenced right after auth because profiles are the first user-visible state.
-- **Status:** proposed
+- **Status:** done
 
 ### S-02: Walking area pin on map
 
@@ -179,3 +179,5 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ## Done
 
+- **S-01: user can create their profile (display name + short bio) and their dog's profile (name, breed, photo uploaded to Supabase Storage).** — Archived 2026-06-10 → `context/archive/2026-06-10-user-and-dog-profile/`. Lesson: —.
+- **F-01: (foundation) auth flows landed; register, login, logout, route protection via middleware.** — Archived 2026-06-10 → `context/archive/2026-05-27-supabase-auth-scaffold/`. Lesson: —.
