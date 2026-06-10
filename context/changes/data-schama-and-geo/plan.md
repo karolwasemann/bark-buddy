@@ -268,27 +268,27 @@ End-to-end verification that the function works correctly from the app's Supabas
 
 #### Automated
 
-- [x] 2.1 Migration applies cleanly: `supabase db reset`
-- [x] 2.2 Function exists in pg_proc
-- [x] 2.3 Function is security definer
+- [x] 2.1 Migration applies cleanly: `supabase db reset` — 0fcdc17
+- [x] 2.2 Function exists in pg_proc — 0fcdc17
+- [x] 2.3 Function is security definer — 0fcdc17
 
 #### Manual
 
-- [x] 2.4 Overlapping pins appear as matches
-- [x] 2.5 Non-overlapping pins do not appear
-- [x] 2.6 No lat/lng/radius in results
-- [x] 2.7 Distance buckets correct
-- [x] 2.8 Requesting user excluded from own results
+- [x] 2.4 Overlapping pins appear as matches — 0fcdc17
+- [x] 2.5 Non-overlapping pins do not appear — 0fcdc17
+- [x] 2.6 No lat/lng/radius in results — 0fcdc17
+- [x] 2.7 Distance buckets correct — 0fcdc17
+- [x] 2.8 Requesting user excluded from own results — 0fcdc17
 
 ### Phase 3: Integration Verification
 
 #### Automated
 
-- [ ] 3.1 All migrations apply cleanly on fresh reset
-- [ ] 3.2 TypeScript types generate without errors
+- [x] 3.1 All migrations apply cleanly on fresh reset
+- [x] 3.2 TypeScript types generate without errors
 
 #### Manual
 
-- [ ] 3.3 RPC call works with authenticated user JWT
-- [ ] 3.4 Correct match data returned end-to-end
-- [ ] 3.5 No location data leaks in response
+- [x] 3.3 RPC call works with authenticated user JWT
+- [x] 3.4 Correct match data returned end-to-end
+- [x] 3.5 No location data leaks in response
