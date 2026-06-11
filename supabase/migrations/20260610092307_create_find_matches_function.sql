@@ -49,12 +49,13 @@ as $$
           )
         )
         /
-        least(
+        NULLIF(least(
           ST_Area(ST_Buffer(rp.location::geography, rp.radius_m)::geometry),
           ST_Area(ST_Buffer(wp.location::geography, wp.radius_m)::geometry)
-        )
+        ), 0)
         >= 0.10
-  order by ST_Distance(rp.location, wp.location) asc;
+  order by ST_Distance(rp.location, wp.location) asc
+  limit 50;
 $$;
 
 -- Allow authenticated users to call the function via RPC.

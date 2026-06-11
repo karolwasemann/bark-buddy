@@ -22,3 +22,10 @@
 - **Problem**: Server action reads form fields with formData.get("x") as string. get() actually returns string | File | null, so the cast lies to the type checker. If a field is absent (e.g. the action is invoked outside the real form), the value is null and downstream use like password.length throws an unhandled runtime error instead of returning a clean validation message. HTML required only guards the normal browser path, not direct/malformed invocations.
 - **Rule**: _<fill in: e.g. "Never cast formData.get() with `as string`; coerce defensively (?.toString() ?? "") or validate presence before use, since server actions can be invoked outside the rendered form">_
 - **Applies to**: _<fill in: e.g. "Any 'use server' action reading FormData fields">_
+
+## Storage RLS must align with function-level access
+
+- **Context**: supabase/migrations/20260610092307_create_find_matches_function.sql:12
+- **Problem**: A function returns a storage path (dog_photo_path) to authorized users, but the storage bucket RLS (owner-only) will block the actual download. The function-level access control and storage-level access control are out of sync.
+- **Rule**: When a function exposes a storage path to users beyond the owner, verify that the storage bucket RLS has a matching policy that grants read access to the same audience.
+- **Applies to**: Any Supabase function or view that returns file paths from private storage buckets.
