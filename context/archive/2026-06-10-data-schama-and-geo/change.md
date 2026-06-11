@@ -1,10 +1,10 @@
 ---
 change_id: data-schama-and-geo
 title: Data schema and geo
-status: impl_reviewed
+status: archived
 created: 2026-06-10
-updated: 2026-06-10
-archived_at: null
+updated: 2026-06-11
+archived_at: 2026-06-11T05:42:15Z
 ---
 
 ## Notes

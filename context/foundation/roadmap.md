@@ -3,7 +3,7 @@ project: "BarkBuddy"
 version: 1
 status: draft
 created: 2026-05-27
-updated: 2026-06-10
+updated: 2026-06-11
 prd_version: 1
 main_goal: market-feedback
 top_blocker: time
@@ -30,7 +30,7 @@ Miejscy właściciele psów w blokach nie mają lekkiego sposobu, by umówić si
 | ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
 |---|---|---|---|---|---|
 | F-01 | supabase-auth-scaffold | (foundation) auth flows landed; register, login, logout, route protection via middleware | — | FR-001, FR-002, Access Control | done |
-| F-02 | data-schema-and-geo | (foundation) Supabase Postgres schema with users, dogs, pins, geo-overlap matching function | — | FR-005, FR-006, Business Logic, NFR privacy lokalizacji | ready |
+| F-02 | data-schema-and-geo | (foundation) Supabase Postgres schema with users, dogs, pins, geo-overlap matching function | — | FR-005, FR-006, Business Logic, NFR privacy lokalizacji | done |
 | S-01 | user-and-dog-profile | user can create their profile (display name + bio) and their dog's profile (name, breed, photo) | F-01 | FR-003, FR-004, FR-011, US-01 | done |
 | S-02 | walking-area-pin | user can place a pin on a map and set a radius to mark their walking area | S-01 | FR-005, US-01 | done |
 | S-03 | match-list | user can view a list of matched users (overlap ≥10% smaller circle) sorted by distance, and open match details | F-02, S-02 | FR-006, FR-007, US-01, NFR privacy lokalizacji, NFR time-to-first-match | proposed |
@@ -85,7 +85,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Geo-overlap calculation (circle intersection area ≥10% of smaller circle) requires correct math — either PostGIS or a custom PL/pgSQL function. This is the deepest technical investment in the roadmap; sequenced early because the north star depends on it and errors here propagate.
-- **Status:** ready
+- **Status:** done
 
 ## Slices
 
@@ -157,7 +157,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 | F-02 | data-schema-and-geo | Design Postgres schema + geo-overlap matching function | yes | Run `/10x-plan data-schema-and-geo` |
 | S-01 | user-and-dog-profile | User + dog profile creation with photo upload | no | Needs F-01 done |
 | S-02 | walking-area-pin | Map view: place pin + set radius | no | Needs S-01 done |
-| S-03 | match-list | Match list: geo-overlap query + privacy-safe display | no | Needs F-02 + S-02 done |
+| S-03 | match-list | Match list: geo-overlap query + privacy-safe display | yes | F-02 + S-02 done |
 | S-04 | walk-invitation-and-messaging | Walk invitation + accept/decline + free-text inbox | no | Needs S-03 done |
 | S-05 | edit-profile-names | Edit display name + dog name | no | Needs S-01 done |
 
@@ -179,6 +179,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ## Done
 
+- **F-02: (foundation) Supabase Postgres schema deployed with geo-overlap matching function, RLS, and PostGIS.** — Archived 2026-06-11 → `context/archive/2026-06-11-data-schema-and-geo/`. Lesson: Storage RLS must align with function-level access.
 - **S-02: user can place a pin on an interactive map and set a radius (circle) to mark their walking area.** — Archived 2026-06-10 → `context/archive/2026-06-10-walking-area-pin/`. Lesson: —.
 - **S-01: user can create their profile (display name + short bio) and their dog's profile (name, breed, photo uploaded to Supabase Storage).** — Archived 2026-06-10 → `context/archive/2026-06-10-user-and-dog-profile/`. Lesson: —.
 - **F-01: (foundation) auth flows landed; register, login, logout, route protection via middleware.** — Archived 2026-06-10 → `context/archive/2026-05-27-supabase-auth-scaffold/`. Lesson: —.
