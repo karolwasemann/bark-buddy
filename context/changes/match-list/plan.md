@@ -256,26 +256,26 @@ Ensure responsive layout, accessibility, and end-to-end correctness.
 
 #### Automated
 
-- [x] 2.1 Build passes: `npm run build`
-- [x] 2.2 Lint passes: `npm run lint`
+- [x] 2.1 Build passes: `npm run build` — 784f26b
+- [x] 2.2 Lint passes: `npm run lint` — 784f26b
 
 #### Manual
 
-- [x] 2.3 Navigation shows 4 items in correct order
-- [x] 2.4 Active state highlights on `/matches`
-- [x] 2.5 Dashboard card shows live match count + distance breakdown
-- [x] 2.6 Dashboard card links to `/matches`
+- [x] 2.3 Navigation shows 4 items in correct order — 784f26b
+- [x] 2.4 Active state highlights on `/matches` — 784f26b
+- [x] 2.5 Dashboard card shows live match count + distance breakdown — 784f26b
+- [x] 2.6 Dashboard card links to `/matches` — 784f26b
 
 ### Phase 3: Polish & Verification
 
 #### Automated
 
-- [ ] 3.1 Build passes: `npm run build`
-- [ ] 3.2 Lint passes: `npm run lint`
+- [x] 3.1 Build passes: `npm run build`
+- [x] 3.2 Lint passes: `npm run lint`
 
 #### Manual
 
-- [ ] 3.3 Responsive grid: 1/2/3 columns at mobile/tablet/desktop
-- [ ] 3.4 Disabled button has aria attributes and tooltip
-- [ ] 3.5 Error state renders friendly message on RPC failure
-- [ ] 3.6 End-to-end: two users with overlapping pins see each other
+- [x] 3.3 Responsive grid: 1/2/3 columns at mobile/tablet/desktop
+- [x] 3.4 Disabled button has aria attributes and tooltip
+- [x] 3.5 Error state renders friendly message on RPC failure
+- [x] 3.6 End-to-end: two users with overlapping pins see each other
