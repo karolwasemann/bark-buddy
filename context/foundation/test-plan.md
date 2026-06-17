@@ -48,7 +48,7 @@ Each row is a discrete rollout phase that will open its own change folder via `/
 
 | # | Phase name | Goal (one line) | Risks covered | Test types | Status | Change folder |
 |---|---|---|---|---|---|---|
-| 1 | Critical-path matching | Prove the matching pipeline works end-to-end: seed overlapping users → results returned → privacy preserved | #1, #2, #3 | integration + contract | change opened | context/changes/testing-critical-path-matching/ |
+| 1 | Critical-path matching | Prove the matching pipeline works end-to-end: seed overlapping users → results returned → privacy preserved | #1, #2, #3 | integration + contract | in progress (4/4 phases impl'd, 2 storage tests skipped) | context/changes/testing-critical-path-matching/ |
 | 2 | Auth & session resilience | Prove session lifecycle is sound: login → refresh → expiry → recovery | #4 | integration | not started | — |
 | 3 | Messaging & invitation integrity | Prove invitation state machine and messaging unlock work correctly; no duplicate/lost messages | #5 | integration | not started | — |
 | 4 | Access-boundary hardening | Prove photo privacy and match-scoped data access hold under adversarial conditions | #6, #2 (reinforcement) | integration + contract | not started | — |
@@ -88,11 +88,21 @@ How to add new tests in this project. Each sub-section fills in once the relevan
 
 ### 6.1 Adding a unit/integration test
 
-TBD — see §3 Phase 1 for matching pipeline and RLS integration test patterns.
+Pattern established in Phase 1. Integration tests:
+- Live in `src/__tests__/integration/*.integration.test.ts`
+- Run via `npm run test:integration` (Vitest workspace project `integration`, node env)
+- Use `getAdminClient()` for seeding, `getAuthenticatedClient(email, pw)` for user simulation
+- Seed helpers in `src/__tests__/helpers/seed.ts`: `createTestUser`, `createTestDog`, `createTestPin`, `cleanupTestUser`
+- Clean up in `afterAll` via `cleanupTestUser` (cascading delete via auth admin)
+- Require local Supabase running (`supabase start`)
 
 ### 6.2 Adding a contract test (response shape)
 
-TBD — see §3 Phase 1 for privacy contract assertion pattern (prove location fields are excluded from match-list responses).
+Pattern established in Phase 1 (`privacy-contract.integration.test.ts`):
+- Define an `ALLOWED_FIELDS` allowlist and a `FORBIDDEN_FIELDS` denylist
+- Seed real data, call the function, assert `Object.keys(result)` matches allowlist exactly
+- Also assert forbidden fields are NOT present (belt-and-suspenders)
+- Runs as integration test (needs real DB to produce the response to inspect)
 
 ### 6.3 Adding a session/auth test
 
