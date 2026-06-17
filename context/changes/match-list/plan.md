@@ -240,31 +240,31 @@ Ensure responsive layout, accessibility, and end-to-end correctness.
 
 #### Automated
 
-- [x] 1.1 Build passes: `npm run build`
-- [x] 1.2 Lint passes: `npm run lint`
-- [x] 1.3 Route `/matches` resolves without 404
+- [x] 1.1 Build passes: `npm run build` — 8dbbafa
+- [x] 1.2 Lint passes: `npm run lint` — 8dbbafa
+- [x] 1.3 Route `/matches` resolves without 404 — 8dbbafa
 
 #### Manual
 
-- [ ] 1.4 Match cards render with correct data and photos
-- [ ] 1.5 Distance badges show correct bucket labels
-- [ ] 1.6 "Invite to walk" button visible but disabled
-- [ ] 1.7 Empty state A: no walking pin → guidance message + link
-- [ ] 1.8 Empty state B: pin set, no matches → "No matches yet" message
+- [x] 1.4 Match cards render with correct data and photos — 8dbbafa
+- [x] 1.5 Distance badges show correct bucket labels — 8dbbafa
+- [x] 1.6 "Invite to walk" button visible but disabled — 8dbbafa
+- [x] 1.7 Empty state A: no walking pin → guidance message + link — 8dbbafa
+- [x] 1.8 Empty state B: pin set, no matches → "No matches yet" message — 8dbbafa
 
 ### Phase 2: Navigation & Dashboard Update
 
 #### Automated
 
-- [ ] 2.1 Build passes: `npm run build`
-- [ ] 2.2 Lint passes: `npm run lint`
+- [x] 2.1 Build passes: `npm run build`
+- [x] 2.2 Lint passes: `npm run lint`
 
 #### Manual
 
-- [ ] 2.3 Navigation shows 4 items in correct order
-- [ ] 2.4 Active state highlights on `/matches`
-- [ ] 2.5 Dashboard card shows live match count + distance breakdown
-- [ ] 2.6 Dashboard card links to `/matches`
+- [x] 2.3 Navigation shows 4 items in correct order
+- [x] 2.4 Active state highlights on `/matches`
+- [x] 2.5 Dashboard card shows live match count + distance breakdown
+- [x] 2.6 Dashboard card links to `/matches`
 
 ### Phase 3: Polish & Verification
 

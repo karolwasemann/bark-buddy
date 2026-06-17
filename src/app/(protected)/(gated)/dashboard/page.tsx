@@ -2,7 +2,6 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock } from "lucide-react";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -10,7 +9,7 @@ export default async function DashboardPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const [{ data: profile }, { data: dog }, { data: walkingPin }] =
+  const [{ data: profile }, { data: dog }, { data: walkingPin }, { data: matchesData }] =
     await Promise.all([
       supabase
         .from("profiles")
@@ -27,6 +26,7 @@ export default async function DashboardPage() {
         .select("lat, lng, radius_m, dogs!inner(owner_id)")
         .eq("dogs.owner_id", user!.id)
         .maybeSingle(),
+      supabase.rpc("find_matches", { requesting_user_id: user!.id }),
     ]);
 
   // Signed URL for dog photo
@@ -42,6 +42,13 @@ export default async function DashboardPage() {
   const tip = walkingPin
     ? "Your walking area is set — matches are on the way!"
     : "Set your walking area to start finding nearby buddies.";
+
+  // Match count breakdown
+  const matches = (matchesData as { distance_bucket: string }[] | null) ?? [];
+  const matchCount = matches.length;
+  const nearby = matches.filter((m) => m.distance_bucket === "nearby").length;
+  const moderate = matches.filter((m) => m.distance_bucket === "moderate").length;
+  const far = matches.filter((m) => m.distance_bucket === "far").length;
 
   return (
     <div className="max-w-5xl mx-auto flex flex-col gap-6">
@@ -128,19 +135,33 @@ export default async function DashboardPage() {
         </Link>
 
         {/* Matches card */}
-        <Card className="h-full opacity-75">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="size-4" />
-              Matches
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Coming soon — we&apos;ll suggest compatible walking buddies nearby.
-            </p>
-          </CardContent>
-        </Card>
+        <Link href="/matches">
+          <Card className="h-full hover:border-primary/50 transition-colors">
+            <CardHeader>
+              <CardTitle>Matches</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {!walkingPin ? (
+                <p className="text-sm text-muted-foreground">
+                  Set walking area to find matches
+                </p>
+              ) : matchCount === 0 ? (
+                <p className="text-sm text-muted-foreground">No matches yet</p>
+              ) : (
+                <div className="flex flex-col gap-1">
+                  <p className="text-2xl font-bold">{matchCount}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {nearby > 0 && `${nearby} nearby`}
+                    {nearby > 0 && moderate > 0 && ", "}
+                    {moderate > 0 && `${moderate} moderate`}
+                    {(nearby > 0 || moderate > 0) && far > 0 && ", "}
+                    {far > 0 && `${far} far`}
+                  </p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </Link>
       </div>
     </div>
   );
