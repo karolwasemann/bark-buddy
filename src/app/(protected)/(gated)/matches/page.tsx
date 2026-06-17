@@ -96,12 +96,12 @@ export default async function MatchesPage() {
         signedPhotoUrl = data?.signedUrl ?? null;
       }
       return { ...match, signedPhotoUrl };
-    })
+    }),
   );
 
   return (
     <div className="max-w-5xl mx-auto flex flex-col gap-6">
-      <h1 className="text-2xl font-bold">Matches</h1>
+      <h1 className="text-2xl font-bold">Buddies nearby</h1>
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {matchesWithPhotos.map((match) => (
           <MatchCard
