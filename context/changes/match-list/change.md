@@ -1,7 +1,7 @@
 ---
 change_id: match-list
 title: Match list
-status: implementing
+status: implemented
 created: 2026-06-17
 updated: 2026-06-17
 archived_at: null

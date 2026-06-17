@@ -270,12 +270,12 @@ Ensure responsive layout, accessibility, and end-to-end correctness.
 
 #### Automated
 
-- [x] 3.1 Build passes: `npm run build`
-- [x] 3.2 Lint passes: `npm run lint`
+- [x] 3.1 Build passes: `npm run build` — 79870f9
+- [x] 3.2 Lint passes: `npm run lint` — 79870f9
 
 #### Manual
 
-- [x] 3.3 Responsive grid: 1/2/3 columns at mobile/tablet/desktop
-- [x] 3.4 Disabled button has aria attributes and tooltip
-- [x] 3.5 Error state renders friendly message on RPC failure
-- [x] 3.6 End-to-end: two users with overlapping pins see each other
+- [x] 3.3 Responsive grid: 1/2/3 columns at mobile/tablet/desktop — 79870f9
+- [x] 3.4 Disabled button has aria attributes and tooltip — 79870f9
+- [x] 3.5 Error state renders friendly message on RPC failure — 79870f9
+- [x] 3.6 End-to-end: two users with overlapping pins see each other — 79870f9
