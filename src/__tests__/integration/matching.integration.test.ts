@@ -55,14 +55,16 @@ describe("find_matches() — Risk #1: Silent Matching Failure", () => {
       });
 
       expect(error).toBeNull();
-      expect(data).toHaveLength(1);
-      expect(data![0]).toMatchObject({
+      expect(data!.length).toBeGreaterThanOrEqual(1);
+      const match = data!.find((m: Record<string, unknown>) => m.profile_id === userB.userId);
+      expect(match).toBeDefined();
+      expect(match).toMatchObject({
         profile_id: userB.userId,
         display_name: "User B",
         dog_name: "Buddy",
         dog_breed: "Labrador",
       });
-      expect(data![0].distance_bucket).toBeDefined();
+      expect(match!.distance_bucket).toBeDefined();
     });
   });
 

@@ -311,8 +311,8 @@ Integration tests proving that RLS correctly allows/denies cross-user data acces
 
 #### Automated
 
-- [x] 2.1 `npm run test:integration` passes with all 6 matching tests green
-- [x] 2.2 No TypeScript errors
+- [x] 2.1 `npm run test:integration` passes with all 6 matching tests green — 4c00974
+- [x] 2.2 No TypeScript errors — 4c00974
 
 #### Manual
 
@@ -323,8 +323,8 @@ Integration tests proving that RLS correctly allows/denies cross-user data acces
 
 #### Automated
 
-- [ ] 3.1 `npm run test:integration` passes including privacy contract tests
-- [ ] 3.2 No TypeScript errors
+- [x] 3.1 `npm run test:integration` passes including privacy contract tests
+- [x] 3.2 No TypeScript errors
 
 #### Manual
 
