@@ -13,3 +13,5 @@ When a foundation doc is fully superseded — replaced by a new approach rather 
 ## Anti-pattern
 
 Do **not** put change-scoped docs here. Anything tied to a single change (its plan, its research, its review) belongs under `context/changes/<change-id>/`. Foundation is for what outlives any one change.
+
+##
