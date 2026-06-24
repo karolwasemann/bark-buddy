@@ -252,19 +252,19 @@ to:
 
 #### Automated
 
-- [x] 3.1 §3a "Not implemented" table has Phase 6, 7, 8 rows
+- [x] 3.1 §3a "Not implemented" table has Phase 6, 7, 8 rows — 63787df
 
 #### Manual
 
-- [x] 3.2 Risk notation consistent with change.md
+- [x] 3.2 Risk notation consistent with change.md — 63787df
 
 ### Phase 4: §7 Negative Space + §8 Freshness
 
 #### Automated
 
-- [ ] 4.1 §7 contains "pixel rendering"
-- [ ] 4.2 §8 contains `2026-06-24` for strategy and stack dates
+- [x] 4.1 §7 contains "pixel rendering"
+- [x] 4.2 §8 contains `2026-06-24` for strategy and stack dates
 
 #### Manual
 
-- [ ] 4.3 §7 entry reads naturally without duplication
+- [x] 4.3 §7 entry reads naturally without duplication

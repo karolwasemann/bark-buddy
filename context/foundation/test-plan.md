@@ -164,12 +164,12 @@ TBD — see §3 Phase 4 for signed-URL access control and match-scoped photo pri
 Exclusions agreed during the rollout. Future contributors should respect these unless the underlying assumption changes.
 
 - **shadcn/ui components** — third-party primitives; we test our logic that uses them, not the components themselves. Re-evaluate if we fork or heavily customize a primitive. (Source: Phase 2 interview Q5.)
-- **Leaflet map rendering** — trust the library; we test that pin data reaches the map component's props, not that the map draws correctly. Re-evaluate if we switch to a custom renderer. (Source: Phase 2 interview Q5.)
+- **Leaflet map rendering** — trust the library; we test that pin data reaches the map component's props, not that the map draws correctly (pixel rendering, tile loading, zoom animations). Re-evaluate if we switch to a custom renderer. (Source: Phase 2 interview Q5.)
 
 ## 8. Freshness Ledger
 
-- Strategy (§1–§5) last reviewed: 2026-06-17
-- Stack versions last verified: 2026-06-17
+- Strategy (§1–§5) last reviewed: 2026-06-24
+- Stack versions last verified: 2026-06-24
 - AI-native tool references last verified: 2026-06-17 (none in use)
 
 Refresh (`/10x-test-plan --refresh`) when:
