@@ -230,13 +230,13 @@ Document required GitHub repository secrets and verify the full pipeline works e
 
 #### Automated
 
-- [x] 2.1 `npx playwright test --project=setup` completes locally
-- [x] 2.2 `CI=true npx playwright test` runs on Chromium
-- [x] 2.3 `npx playwright test` runs on Edge locally
+- [x] 2.1 `npx playwright test --project=setup` completes locally — 1b229cf
+- [x] 2.2 `CI=true npx playwright test` runs on Chromium — 1b229cf
+- [x] 2.3 `npx playwright test` runs on Edge locally — 1b229cf
 
 #### Manual
 
-- [ ] 2.4 E2E tests pass in CI (job 3 green)
+- [x] 2.4 E2E tests pass in CI (job 3 green) — 1b229cf
 
 ### Phase 3: GitHub Secrets & Verification
 
