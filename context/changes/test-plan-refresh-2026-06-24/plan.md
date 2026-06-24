@@ -262,9 +262,9 @@ to:
 
 #### Automated
 
-- [x] 4.1 §7 contains "pixel rendering"
-- [x] 4.2 §8 contains `2026-06-24` for strategy and stack dates
+- [x] 4.1 §7 contains "pixel rendering" — b6d77cb
+- [x] 4.2 §8 contains `2026-06-24` for strategy and stack dates — b6d77cb
 
 #### Manual
 
-- [x] 4.3 §7 entry reads naturally without duplication
+- [x] 4.3 §7 entry reads naturally without duplication — b6d77cb
