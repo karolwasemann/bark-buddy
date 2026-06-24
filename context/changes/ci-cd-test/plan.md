@@ -242,11 +242,11 @@ Document required GitHub repository secrets and verify the full pipeline works e
 
 #### Automated
 
-- [ ] 3.1 All three CI jobs pass on a test PR
+- [x] 3.1 All three CI jobs pass on a test PR
 
 #### Manual
 
-- [ ] 3.2 GitHub repository has all 5 secrets configured
-- [ ] 3.3 PR shows three green checks
-- [ ] 3.4 Merging blocked when a job fails
-- [ ] 3.5 Push to main triggers pipeline
+- [x] 3.2 GitHub repository has all 5 secrets configured
+- [x] 3.3 PR shows three green checks
+- [x] 3.4 Merging blocked when a job fails
+- [x] 3.5 Push to main triggers pipeline
