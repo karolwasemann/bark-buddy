@@ -1,10 +1,10 @@
 ---
 change_id: test-plan-refresh-2026-06-24
 title: Refresh test plan with E2E rollout phases and corrected stack info
-status: implemented
+status: archived
 created: 2026-06-24
 updated: 2026-06-24
-archived_at: null
+archived_at: 2026-06-24T08:09:21Z
 ---
 
 ## Notes
