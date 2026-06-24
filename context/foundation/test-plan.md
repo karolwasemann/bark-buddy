@@ -81,6 +81,9 @@ Each row is a discrete rollout phase that will open its own change folder via `/
 | 3 | #5 | Invitation state machine: send → receive → accept → message, idempotency |
 | 4 | #6, #2 | Signed URL TTL, match-scoped photo access, adversarial non-match denial |
 | 5 | all | CI pipeline: lint + typecheck + integration on every PR |
+| 6 | E3, E5 | Automated auth setup project (Playwright project dependency), env-based credentials, multi-browser config, E2E seed helper |
+| 7 | E1, E2 | Full onboarding → match-list E2E: fresh user register through to rendered match cards |
+| 8 | E4 | Walking-area pin drag/save/reload E2E with debounce wait strategy |
 
 ### Pending manual checks (Phase 1)
 

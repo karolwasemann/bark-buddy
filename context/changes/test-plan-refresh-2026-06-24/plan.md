@@ -240,23 +240,23 @@ to:
 
 #### Automated
 
-- [x] 2.1 §3 table has 8 rows (Phases 1-8)
-- [x] 2.2 Phases 6-8 show `not started` status
+- [x] 2.1 §3 table has 8 rows (Phases 1-8) — 529b97b
+- [x] 2.2 Phases 6-8 show `not started` status — 529b97b
 
 #### Manual
 
-- [x] 2.3 Risk references consistent with §2
-- [x] 2.4 Column alignment matches existing rows
+- [x] 2.3 Risk references consistent with §2 — 529b97b
+- [x] 2.4 Column alignment matches existing rows — 529b97b
 
 ### Phase 3: §3a Implementation Status Update
 
 #### Automated
 
-- [ ] 3.1 §3a "Not implemented" table has Phase 6, 7, 8 rows
+- [x] 3.1 §3a "Not implemented" table has Phase 6, 7, 8 rows
 
 #### Manual
 
-- [ ] 3.2 Risk notation consistent with change.md
+- [x] 3.2 Risk notation consistent with change.md
 
 ### Phase 4: §7 Negative Space + §8 Freshness
 
