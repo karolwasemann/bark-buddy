@@ -1,5 +1,5 @@
 // Playwright configuration for Bark Buddy E2E tests.
-// Uses Microsoft Edge (Chromium-based) and pre-authenticated session via storageState.
+// Auth setup project logs in once; tests reuse the session via storageState.
 
 import { defineConfig, devices } from "@playwright/test";
 
@@ -19,12 +19,25 @@ export default defineConfig({
 
   projects: [
     {
-      name: "edge",
-      use: {
-        ...devices["Desktop Edge"],
-        channel: "msedge",
-      },
+      name: "setup",
+      testMatch: /.*\.setup\.ts/,
+      use: { storageState: undefined },
     },
+    ...(process.env.CI
+      ? [
+          {
+            name: "chromium",
+            use: { ...devices["Desktop Chrome"] },
+            dependencies: ["setup"],
+          },
+        ]
+      : [
+          {
+            name: "edge",
+            use: { ...devices["Desktop Edge"], channel: "msedge" as const },
+            dependencies: ["setup"],
+          },
+        ]),
   ],
 
   webServer: {

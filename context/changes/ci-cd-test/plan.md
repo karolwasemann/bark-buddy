@@ -230,9 +230,9 @@ Document required GitHub repository secrets and verify the full pipeline works e
 
 #### Automated
 
-- [ ] 2.1 `npx playwright test --project=setup` completes locally
-- [ ] 2.2 `CI=true npx playwright test` runs on Chromium
-- [ ] 2.3 `npx playwright test` runs on Edge locally
+- [x] 2.1 `npx playwright test --project=setup` completes locally
+- [x] 2.2 `CI=true npx playwright test` runs on Chromium
+- [x] 2.3 `npx playwright test` runs on Edge locally
 
 #### Manual
 
