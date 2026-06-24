@@ -3,6 +3,8 @@
 
 import { defineConfig, devices } from "@playwright/test";
 
+const authFile = "auth.json";
+
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
@@ -13,7 +15,6 @@ export default defineConfig({
 
   use: {
     baseURL: "http://localhost:3000",
-    storageState: "auth.json",
     trace: "on-first-retry",
   },
 
@@ -21,20 +22,19 @@ export default defineConfig({
     {
       name: "setup",
       testMatch: /.*\.setup\.ts/,
-      use: { storageState: undefined },
     },
     ...(process.env.CI
       ? [
           {
             name: "chromium",
-            use: { ...devices["Desktop Chrome"] },
+            use: { ...devices["Desktop Chrome"], storageState: authFile },
             dependencies: ["setup"],
           },
         ]
       : [
           {
             name: "edge",
-            use: { ...devices["Desktop Edge"], channel: "msedge" as const },
+            use: { ...devices["Desktop Edge"], channel: "msedge" as const, storageState: authFile },
             dependencies: ["setup"],
           },
         ]),
