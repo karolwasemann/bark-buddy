@@ -217,14 +217,14 @@ Document required GitHub repository secrets and verify the full pipeline works e
 
 #### Automated
 
-- [x] 1.1 `npm run typecheck` passes locally
-- [x] 1.2 `npm run lint` passes locally
-- [x] 1.3 `npm run build` passes locally
-- [x] 1.4 Workflow YAML valid
+- [x] 1.1 `npm run typecheck` passes locally — 888b79a
+- [x] 1.2 `npm run lint` passes locally — 888b79a
+- [x] 1.3 `npm run build` passes locally — 888b79a
+- [x] 1.4 Workflow YAML valid — 888b79a
 
 #### Manual
 
-- [ ] 1.5 Three jobs appear in GitHub Actions on push
+- [x] 1.5 Three jobs appear in GitHub Actions on push — 888b79a
 
 ### Phase 2: Playwright CI Setup
 
