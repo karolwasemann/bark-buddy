@@ -229,24 +229,24 @@ to:
 
 #### Automated
 
-- [x] 1.1 §4 table contains `Playwright | 1.61.0`
-- [x] 1.2 No "none yet" in E2E row
+- [x] 1.1 §4 table contains `Playwright | 1.61.0` — 17f459b
+- [x] 1.2 No "none yet" in E2E row — 17f459b
 
 #### Manual
 
-- [x] 1.3 Notes style consistent with other §4 rows
+- [x] 1.3 Notes style consistent with other §4 rows — 17f459b
 
 ### Phase 2: §3 E2E Rollout Phases
 
 #### Automated
 
-- [ ] 2.1 §3 table has 8 rows (Phases 1-8)
-- [ ] 2.2 Phases 6-8 show `not started` status
+- [x] 2.1 §3 table has 8 rows (Phases 1-8)
+- [x] 2.2 Phases 6-8 show `not started` status
 
 #### Manual
 
-- [ ] 2.3 Risk references consistent with §2
-- [ ] 2.4 Column alignment matches existing rows
+- [x] 2.3 Risk references consistent with §2
+- [x] 2.4 Column alignment matches existing rows
 
 ### Phase 3: §3a Implementation Status Update
 

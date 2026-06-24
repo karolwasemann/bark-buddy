@@ -53,6 +53,9 @@ Each row is a discrete rollout phase that will open its own change folder via `/
 | 3 | Messaging & invitation integrity | Prove invitation state machine and messaging unlock work correctly; no duplicate/lost messages | #5 | integration | not started | — |
 | 4 | Access-boundary hardening | Prove photo privacy and match-scoped data access hold under adversarial conditions | #6, #2 (reinforcement) | integration + contract | not started | — |
 | 5 | Quality-gates wiring | Lock the floor: CI runs lint + typecheck + integration suite on every PR | cross-cutting | CI gates | not started | — |
+| 6 | E2E infra hardening | Automated auth setup, env-based credentials, multi-browser config (Chrome + Firefox + Edge), E2E seeding helper | E3 (auth fragility), E5 (cross-browser) | E2E infra | not started | — |
+| 7 | Onboarding pipeline E2E | Full chain: register → profile → dog → walking-area → dashboard → match list renders; error states at each step | E1 (pipeline breakage), E2 (empty matches after onboarding) | E2E | not started | — |
+| 8 | Walking-area interaction E2E | Pin drag → save confirmation → reload persistence; radius adjust → save; error feedback on server-action failure | E4 (auto-save failure) | E2E | not started | — |
 
 ## 3a. Implementation Status
 
