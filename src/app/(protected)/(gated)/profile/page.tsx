@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -9,9 +10,11 @@ export default async function ProfilePage() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  if (!user) redirect("/login");
+
   const [{ data: profile }, { data: dog }] = await Promise.all([
-    supabase.from("profiles").select("display_name, bio").eq("id", user!.id).single(),
-    supabase.from("dogs").select("name, breed, photo_path").eq("owner_id", user!.id).single(),
+    supabase.from("profiles").select("display_name, bio").eq("id", user.id).single(),
+    supabase.from("dogs").select("name, breed, photo_path").eq("owner_id", user.id).single(),
   ]);
 
   // Mint a short-lived signed URL server-side. Plain <img> is intentional:

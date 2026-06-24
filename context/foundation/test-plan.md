@@ -54,6 +54,39 @@ Each row is a discrete rollout phase that will open its own change folder via `/
 | 4 | Access-boundary hardening | Prove photo privacy and match-scoped data access hold under adversarial conditions | #6, #2 (reinforcement) | integration + contract | not started | — |
 | 5 | Quality-gates wiring | Lock the floor: CI runs lint + typecheck + integration suite on every PR | cross-cutting | CI gates | not started | — |
 
+## 3a. Implementation Status
+
+> Last verified: 2026-06-24
+
+### Implemented
+
+| Test file | Risk | What it proves |
+|-----------|------|----------------|
+| `src/__tests__/integration/matching.integration.test.ts` | #1 | 6 cases: overlap match, no-overlap empty, no-pin empty, self-exclusion, boundary <10%, multi-match ordering |
+| `src/__tests__/integration/privacy-contract.integration.test.ts` | #3 | Response shape allowlist/denylist — no lat/lng/radius leak |
+| `src/__tests__/integration/rls-access.integration.test.ts` | #2 | 4 passing (direct table blocks on profiles/dogs/pins + function bypass); 2 storage tests skipped pending RLS fix |
+| `e2e/match-list-renders.spec.ts` | #1 | Full browser pipeline: auth → RPC → RLS → UI renders match cards |
+| `e2e/seed.spec.ts` | — | Exemplar/reference for Playwright patterns |
+| `src/__tests__/helpers/supabase.ts` + `seed.ts` | — | Test infra: admin/auth clients + seed factories |
+
+### Not implemented
+
+| Phase | Risk | What's needed |
+|-------|------|---------------|
+| 1 (partial) | #2 | 2 storage signed-URL tests — blocked on storage RLS policy fix |
+| 2 | #4 | Token refresh via proxy, expiry → recovery UI, 401 handling |
+| 3 | #5 | Invitation state machine: send → receive → accept → message, idempotency |
+| 4 | #6, #2 | Signed URL TTL, match-scoped photo access, adversarial non-match denial |
+| 5 | all | CI pipeline: lint + typecheck + integration on every PR |
+
+### Pending manual checks (Phase 1)
+
+- [ ] 2.3 Test output clearly names scenarios
+- [ ] 2.4 `supabase db reset` + re-run produces same results
+- [ ] 3.3 Allowlist matches SQL return type in migration
+- [ ] 4.3 Storage RLS fix migration applied
+- [ ] 4.4 Signed URL test exercises actual storage policy
+
 ## 4. Stack
 
 The classic test base for this project.
@@ -63,7 +96,7 @@ The classic test base for this project.
 | unit + integration | Vitest | 4.1.7 | jsdom env, @testing-library/react, @vitejs/plugin-react; tsconfig paths resolved |
 | DOM testing | @testing-library/react | 16.3.2 | For component-level assertions when needed |
 | API mocking | none yet — see Phase 1 | — | Likely MSW or direct Supabase test client; research will determine |
-| e2e | none yet — see Phase 5 | — | Playwright recommended if e2e gate is justified after Phase 4 |
+| e2e | Playwright | 1.61.0 | testDir: ./e2e, Edge-only (multi-browser planned Phase 6), storageState auth, 2 specs + E2E_RULES.md |
 | accessibility | none yet | — | axe-core integration deferred; basic a11y is not an MVP gate |
 
 **Stack grounding tools (current session):**

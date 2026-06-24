@@ -42,3 +42,7 @@ next-env.d.ts
 
 .kiro
 .ai
+
+#playwright
+auth.json
+.playwright-cli
